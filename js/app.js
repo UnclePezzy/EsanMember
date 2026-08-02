@@ -15,6 +15,11 @@ async function main() {
 
         console.log("LINE Profile:", profile);
 
+        // รูปโปรไฟล์
+        document.getElementById("profilePic").src =
+            profile.pictureUrl || "";
+
+        // ชื่อสมาชิก
         document.getElementById("displayName").innerText =
             `สวัสดี คุณ ${profile.displayName}`;
 
@@ -35,10 +40,28 @@ async function main() {
 
         console.log("Customer:", customer);
 
-        document.getElementById("points").innerText =
-            customer.points ?? 0;
+        // แต้มสะสม
+        const points = customer.points ?? 0;
+        document.getElementById("points").innerText = points;
 
-        // ปุ่มโปรโมชั่น
+        // ระดับสมาชิก
+        let level = "🌱 สมาชิกใหม่";
+
+        if (points >= 10)
+            level = "🥢 ลูกค้าประจำ";
+
+        if (points >= 30)
+            level = "🌶 แฟนประจำ";
+
+        if (points >= 50)
+            level = "👑 VIP";
+
+        if (points >= 100)
+            level = "🔥 ตำนานร้านอีสานรักบ้านเกิด";
+
+        document.getElementById("memberLevel").innerText = level;
+
+        // โปรโมชั่น
         document.getElementById("promoBtn").addEventListener("click", () => {
             liff.openWindow({
                 url: "https://line.me/R/ti/p/@043vfrqa",
@@ -46,15 +69,8 @@ async function main() {
             });
         });
 
-        // ปุ่มติดต่อร้าน
-        document.getElementById("contactBtn").addEventListener("click", () => {
-            liff.openWindow({
-                url: "https://maps.app.goo.gl/SfdJ8RoyZwdgopEQ6?g_st=ic",
-                external: true
-            });
-        });
-
     } catch (error) {
+
         console.error("LIFF ERROR:", error);
 
         document.getElementById("displayName").innerText =
