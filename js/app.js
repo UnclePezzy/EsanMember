@@ -21,11 +21,9 @@ async function main() {
         // บันทึกสมาชิกลง Backend
         const response = await fetch("https://esanmember-api.onrender.com/api/customers", {
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify({
                 userId: profile.userId,
                 displayName: profile.displayName,
@@ -40,6 +38,22 @@ async function main() {
         document.getElementById("points").innerText =
             customer.points ?? 0;
 
+        // ปุ่มโปรโมชั่น
+        document.getElementById("promoBtn").addEventListener("click", () => {
+            liff.openWindow({
+                url: "https://line.me/R/ti/p/@043vfrqa",
+                external: true
+            });
+        });
+
+        // ปุ่มติดต่อร้าน
+        document.getElementById("contactBtn").addEventListener("click", () => {
+            liff.openWindow({
+                url: "https://maps.app.goo.gl/SfdJ8RoyZwdgopEQ6?g_st=ic",
+                external: true
+            });
+        });
+
     } catch (error) {
         console.error("LIFF ERROR:", error);
 
@@ -47,20 +61,5 @@ async function main() {
             "ไม่สามารถโหลดข้อมูลสมาชิกได้";
     }
 }
-document.getElementById("promoBtn").addEventListener("click", () => {
-    liff.openWindow({
-        url: "https://line.me/R/ti/p/@043vfrqa",
-        external: true
-    });
-});document.getElementById("contactBtn").addEventListener("click", () => {
 
-    liff.openWindow({
-
-        url: "https://maps.app.goo.gl/ใส่ลิงก์ร้าน",
-
-        external: true
-
-    });
-
-});
 main();
