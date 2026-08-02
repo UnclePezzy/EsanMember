@@ -19,7 +19,7 @@ async function main() {
             `สวัสดี คุณ ${profile.displayName}`;
 
         // บันทึกสมาชิกลง Backend
-        const response = await fetch("http://localhost:3000/api/customers", {
+        const response = await fetch("https://esanmember-api.onrender.com/api/customers", {
             method: "POST",
 
             headers: {
