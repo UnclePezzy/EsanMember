@@ -52,5 +52,15 @@ document.getElementById("promoBtn").addEventListener("click", () => {
         url: "https://line.me/R/ti/p/@043vfrqa",
         external: true
     });
+});document.getElementById("contactBtn").addEventListener("click", () => {
+
+    liff.openWindow({
+
+        url: "https://maps.app.goo.gl/ใส่ลิงก์ร้าน",
+
+        external: true
+
+    });
+
 });
 main();
