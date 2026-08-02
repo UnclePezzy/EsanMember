@@ -47,5 +47,10 @@ async function main() {
             "ไม่สามารถโหลดข้อมูลสมาชิกได้";
     }
 }
-
+document.getElementById("promoBtn").addEventListener("click", () => {
+    liff.openWindow({
+        url: "https://line.me/R/ti/p/@043vfrqa",
+        external: true
+    });
+});
 main();
