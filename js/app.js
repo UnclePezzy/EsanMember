@@ -60,15 +60,6 @@ async function main() {
             level = "🔥 ตำนานร้านอีสานรักบ้านเกิด";
 
         document.getElementById("memberLevel").innerText = level;
-
-        // โปรโมชั่น
-        document.getElementById("promoBtn").addEventListener("click", () => {
-            liff.openWindow({
-                url: "https://line.me/R/ti/p/@043vfrqa",
-                external: true
-            });
-        });
-
     } catch (error) {
 
         console.error("LIFF ERROR:", error);
