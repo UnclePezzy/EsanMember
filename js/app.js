@@ -1,4 +1,4 @@
-const LIFF_ID = "ใส่_LIFF_ID_ตรงนี้";
+const LIFF_ID = "2010938431-JUZLRPFk";
 
 async function main() {
     try {
